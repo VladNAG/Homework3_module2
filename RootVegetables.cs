@@ -17,5 +17,25 @@ namespace Homework3_module2
 
         public override string Name { get; set; }
         public override int Calories { get; protected set; }
+
+        public override int CompareTo(Vegetables? other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+
+            if (Calories < other.Calories)
+            {
+                return -1;
+            }
+
+            if (Calories > other.Calories)
+            {
+                return 1;
+            }
+
+            return 0;
+        }
     }
 }

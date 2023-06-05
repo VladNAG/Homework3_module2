@@ -8,11 +8,11 @@ namespace Homework3_module2
         {
             var vegetebles = new AllVegetables();
             vegetebles.ShowAllVegetables();
-            vegetebles.Short();
-            Console.WriteLine("Enter count vegetebles for salad (Max count 11)");
+            vegetebles.Sort();
+            Console.WriteLine("Enter quantity vegetebles for salad (Max count 11)");
             int contVegSalad = int.Parse(Console.ReadLine());
             var salas = new Salad(contVegSalad);
-            salas.Short();
+            salas.Sort();
         }
     }
 }

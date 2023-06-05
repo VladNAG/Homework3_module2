@@ -32,27 +32,29 @@ namespace Homework3_module2
             Console.WriteLine($"Calories salad:{calories.ToString()}kl");
         }
 
-        public override void Short()
+        public override void Sort()
         {
             Console.WriteLine();
-            Console.WriteLine("Bring vegetables up to 100 calories in salad:");
+            Console.WriteLine("Enter quantity calories (Max-400)");
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Vegetables whose calories are lower: {x} kl:");
             for (int i = 0; i < salad.Length; i++)
             {
-                if (salad[i].Calories < 100)
+                if (salad[i].Calories < x)
                 {
                     Console.WriteLine(salad[i].Name);
                 }
             }
 
             Console.WriteLine();
-            Console.WriteLine("Bring vegetables over 100 calories in salad:");
+            Console.WriteLine($"Vegetables whose calories are higher: {x} kl:");
             for (int i = 0; i < salad.Length; i++)
             {
-                if (salad[i].Calories >= 100)
+                if (salad[i].Calories >= x)
                 {
                     Console.WriteLine(salad[i].Name);
                 }
             }
         }
     }
-} /*сделать метод расширения на сортировку салата по типу и всех продуктов*/
+}

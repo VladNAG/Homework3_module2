@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework3_module2
 {
-    public class AllVegetables : IShort
+    public class AllVegetables
     {
         public AllVegetables()
         {
@@ -38,6 +38,7 @@ namespace Homework3_module2
         public Vegetables[] ArrayVegetables { get; protected set; }
         public void ShowAllVegetables()
         {
+            Array.Sort(ArrayVegetables);
             Console.WriteLine("All Vegetables:");
             for (int i = 0; i < ArrayVegetables.Length; i++)
             {
@@ -52,24 +53,25 @@ namespace Homework3_module2
             }
         }
 
-        public virtual void Short()
+        public virtual void Sort()
         {
             Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Bring vegetables up to 100 calories:");
+            Console.WriteLine("Enter quantity calories (Max-400)");
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Vegetables whose calories are lower: {x} kl:");
             for (int i = 0; i < ArrayVegetables.Length; i++)
             {
-                if (ArrayVegetables[i].Calories < 100)
+                if (ArrayVegetables[i].Calories < x)
                 {
                     Console.WriteLine(ArrayVegetables[i].Name);
                 }
             }
 
             Console.WriteLine();
-            Console.WriteLine("Bring vegetables over 100 calories in salad:");
+            Console.WriteLine($"Vegetables whose calories are higher: {x} kl:");
             for (int i = 0; i < ArrayVegetables.Length; i++)
             {
-                if (ArrayVegetables[i].Calories >= 100)
+                if (ArrayVegetables[i].Calories >= x)
                 {
                     Console.WriteLine(ArrayVegetables[i].Name);
                 }
